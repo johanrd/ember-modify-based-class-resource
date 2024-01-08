@@ -63,7 +63,7 @@ declare const __ResourceArgs__: unique symbol;
  *
  * An example
  * ```js
- * import { Resource } from 'ember-resources';
+ * import { Resource } from 'ember-modify-based-class-resource';
  * import { createMachine, interpret } from 'xstate';
  *
  * const machine = createMachine(); // ... see XState docs for this function this ...
@@ -180,7 +180,8 @@ export class Resource<Args = unknown> {
    * from the consumer so that the surface API is smaller.
    *
    * ```js
-   * import { Resource, use } from 'ember-resources';
+   * import { use } from 'ember-resources';
+   * import { Resource } from 'ember-modify-based-class-resource';
    *
    * class SomeResource extends Resource {}
    *
@@ -202,7 +203,7 @@ export class Resource<Args = unknown> {
    * Though it _may_ be more convenient to not wrap your resource abstraction in a helper function.
    *
    * ```js
-   * import { Resource } from 'ember-resources';
+   * import { Resource } from 'ember-modify-based-class-resource';
    *
    * class SomeResource extends Resource {}
    *
@@ -341,7 +342,7 @@ function resourceOf<SomeResource extends Resource<unknown>>(
 ): SomeResource {
   assert(
     `Expected second argument, klass, to be a Resource. ` +
-      `Instead, received some ${typeof klass}, ${klass.name}`,
+    `Instead, received some ${typeof klass}, ${klass.name}`,
     klass.prototype instanceof Resource,
   );
 
