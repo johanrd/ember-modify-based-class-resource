@@ -5,7 +5,8 @@ import { settled } from '@ember/test-helpers';
 import { module, test } from 'qunit';
 import { setupTest } from 'ember-qunit';
 
-import { Resource, use } from 'ember-resources';
+import { Resource } from 'ember-modify-based-class-resource';
+import { use } from 'ember-resources';
 
 import type Owner from '@ember/owner';
 

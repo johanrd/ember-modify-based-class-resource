@@ -341,7 +341,7 @@ function resourceOf<SomeResource extends Resource<unknown>>(
 ): SomeResource {
   assert(
     `Expected second argument, klass, to be a Resource. ` +
-    `Instead, received some ${typeof klass}, ${klass.name}`,
+      `Instead, received some ${typeof klass}, ${klass.name}`,
     klass.prototype instanceof Resource,
   );
 

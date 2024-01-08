@@ -1,4 +1,5 @@
-import { Resource, use } from 'ember-resources';
+import { Resource } from 'ember-modify-based-class-resource';
+import { use } from 'ember-resources';
 import { expectTypeOf } from 'expect-type';
 import { expectType } from 'ts-expect';
 
