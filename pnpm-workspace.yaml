@@ -1,6 +1,4 @@
 packages:
-  - "ember-resources"
-  - "docs"
+  - "ember-modify-based-class-resource"
   - "test-app"
-  - "test-app-ember-concurrency*"
   - "dev/*"

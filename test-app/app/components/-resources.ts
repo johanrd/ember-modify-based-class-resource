@@ -1,6 +1,7 @@
 import { tracked } from '@glimmer/tracking';
 
-import { Resource, resource } from 'ember-resources';
+import { Resource } from 'ember-modify-based-class-resource';
+import { resource } from 'ember-resources';
 
 class Cell<T> {
   @tracked declare current: T;

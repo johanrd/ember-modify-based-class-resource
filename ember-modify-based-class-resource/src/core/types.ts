@@ -1,4 +1,3 @@
-import type { INTERNAL } from './function-based/types';
 import type { Thunk } from './types/thunk';
 
 export * from './types/base';
@@ -33,5 +32,5 @@ export interface ClassResourceConfig {
   thunk: Thunk;
   definition: unknown;
   type: 'class-based';
-  [INTERNAL]: true;
+  __INTERNAL__: true;
 }

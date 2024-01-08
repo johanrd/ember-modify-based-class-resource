@@ -5,7 +5,8 @@ import { click, render } from '@ember/test-helpers';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 
-import { cell, Resource, use } from 'ember-resources';
+import { Resource } from 'ember-modify-based-class-resource';
+import { cell, use } from 'ember-resources';
 
 module('Core | Resource | rendering', function (hooks) {
   setupRenderingTest(hooks);
