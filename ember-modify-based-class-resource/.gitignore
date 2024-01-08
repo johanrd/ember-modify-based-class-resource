@@ -1,0 +1,10 @@
+# copied from root
+/README.md
+/LICENSE.md
+
+# output
+dist/
+declarations/
+src/**/*.d.ts
+src/**/*.d.ts.map
+src/**/*.js

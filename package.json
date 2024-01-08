@@ -1,0 +1,58 @@
+{
+  "private": true,
+  "repository": "https://github.com/NullVoxPopuli/ember-resources",
+  "license": "MIT",
+  "author": "NullVoxPopuli",
+  "scripts": {
+    "build": "pnpm run --filter ember-resources build",
+    "build:docs": "pnpm run --filter docs docs:collect",
+    "ci:update": "npx ember-ci-update",
+    "dev": "concurrently 'npm:dev:*' --prefix-colors cyan,white,yellow --restart-tries -1",
+    "dev:addon": "pnpm run --filter ember-resources start --no-watch.clearScreen",
+    "dev:docs": "pnpm run --filter docs docs:watch --preserveWatchOutput",
+    "dev:ember": "pnpm run --filter test-app start",
+    "lint": "pnpm run --filter '*' lint",
+    "lint:fix": "pnpm run --filter '*' lint:fix"
+  },
+  "devDependencies": {
+    "@nullvoxpopuli/eslint-configs": "^3.2.0",
+    "concurrently": "^8.0.0",
+    "eslint": "^8.35.0",
+    "loader.js": "^4.7.0",
+    "prettier": "^3.0.0",
+    "release-plan": "^0.6.0",
+    "typescript": "^5.0.0"
+  },
+  "packageManager": "pnpm@8.12.1",
+  "engines": {
+    "node": ">= 18.*",
+    "npm": "use pnpm",
+    "yarn": "use pnpm"
+  },
+  "volta": {
+    "node": "20.10.0",
+    "pnpm": "8.12.1"
+  },
+  "pnpm": {
+    "overrides": {
+      "ember-eslint-parser": "0.2.5",
+      "eslint-plugin-ember": "github:ember-cli/eslint-plugin-ember#master",
+      "@types/eslint": "7.29.0",
+      "mustache": "^4.2.0"
+    },
+    "overrides-notes": {
+      "@types/eslint": "webpack brings in @types/eslint@8, which breaks our type checking",
+      "mustache": "ember-cli -> testem -> consolidate -> mustache is ancient"
+    },
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "msw",
+        "webpack"
+      ],
+      "allowAny": [
+        "ember-source",
+        "typescript"
+      ]
+    }
+  }
+}
