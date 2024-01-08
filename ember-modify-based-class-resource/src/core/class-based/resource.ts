@@ -5,7 +5,6 @@ import { assert } from '@ember/debug';
 // @ts-ignore
 import { invokeHelper } from '@ember/helper';
 
-import { INTERNAL } from '../function-based/types';
 import { DEFAULT_THUNK, normalizeThunk } from '../utils';
 
 import type { AsThunk, Cache, Constructor, Named, Positional, Thunk } from '[core-types]';
@@ -277,7 +276,7 @@ export class Resource<Args = unknown> {
         thunk: contextOrThunk,
         definition: this,
         type: 'class-based',
-        [INTERNAL]: true,
+        __INTERNAL__: true,
       } as unknown as SomeResource;
     }
 
@@ -342,7 +341,7 @@ function resourceOf<SomeResource extends Resource<unknown>>(
 ): SomeResource {
   assert(
     `Expected second argument, klass, to be a Resource. ` +
-      `Instead, received some ${typeof klass}, ${klass.name}`,
+    `Instead, received some ${typeof klass}, ${klass.name}`,
     klass.prototype instanceof Resource,
   );
 

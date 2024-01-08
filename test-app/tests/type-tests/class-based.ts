@@ -2,10 +2,10 @@ import { Resource, use } from 'ember-resources';
 import { expectTypeOf } from 'expect-type';
 import { expectType } from 'ts-expect';
 
-import type { ExpandArgs, Thunk } from 'ember-resources';
 // This is private, but we test it for sanity
 // because when this was added, I had none.
-import type { ArgsFrom } from 'ember-resources/core/class-based/resource';
+import type { ArgsFrom } from 'ember-modify-based-class-resource/core/class-based/resource';
+import type { ExpandArgs, Thunk } from 'ember-resources';
 
 class A extends Resource {
   a = 1;

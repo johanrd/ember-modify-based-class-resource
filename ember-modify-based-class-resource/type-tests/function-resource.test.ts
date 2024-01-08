@@ -1,6 +1,5 @@
+import { cell, type Reactive, resource, resourceFactory } from 'ember-resources';
 import { expectTypeOf } from 'expect-type';
-
-import { cell, type Reactive, resource, resourceFactory } from '../src/index';
 
 const StuckClock = resource(() => 2);
 

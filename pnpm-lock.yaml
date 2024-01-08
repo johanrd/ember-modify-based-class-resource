@@ -156,6 +156,9 @@ importers:
       ember-async-data:
         specifier: ^1.0.1
         version: 1.0.3(ember-source@5.5.0)
+      ember-resources:
+        specifier: ^6.4.3
+        version: 6.4.3(@ember/test-waiters@3.0.2)(@glimmer/component@1.1.2)(@glimmer/tracking@1.1.2)(@glint/template@1.2.1)(ember-source@5.5.0)
       ember-source:
         specifier: 5.5.0
         version: 5.5.0(@babel/core@7.22.10)(@glimmer/component@1.1.2)(@glint/template@1.2.1)
@@ -8176,6 +8179,36 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: false
+
+  /ember-resources@6.4.3(@ember/test-waiters@3.0.2)(@glimmer/component@1.1.2)(@glimmer/tracking@1.1.2)(@glint/template@1.2.1)(ember-source@5.5.0):
+    resolution: {integrity: sha512-whKUv8L3dZ3ycBWjYnPk1SKdaylN/6g4eTNH2pY2CbctF1/pKe3fXGfpd7a/3tOTjjXuMEmzyCI3HaKBWj3o9A==}
+    peerDependencies:
+      '@ember/test-waiters': ^3.0.0
+      '@glimmer/component': ^1.1.2
+      '@glimmer/tracking': ^1.1.2
+      '@glint/template': ^1.0.0-beta.3 || ^1.0.0
+      ember-concurrency: ^2.0.0 || ^3.0.0
+      ember-source: '*'
+    peerDependenciesMeta:
+      '@ember/test-waiters':
+        optional: true
+      '@glimmer/component':
+        optional: true
+      ember-concurrency:
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.23.2
+      '@ember/test-waiters': 3.0.2
+      '@embroider/addon-shim': 1.8.6
+      '@embroider/macros': 1.13.2(@glint/template@1.2.1)
+      '@glimmer/component': 1.1.2(@babel/core@7.22.10)
+      '@glimmer/tracking': 1.1.2
+      '@glint/template': 1.2.1
+      ember-async-data: 1.0.3(ember-source@5.5.0)
+      ember-source: 5.5.0(@babel/core@7.22.10)(@glimmer/component@1.1.2)(@glint/template@1.2.1)
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
 
   /ember-rfc176-data@0.3.18:
     resolution: {integrity: sha512-JtuLoYGSjay1W3MQAxt3eINWXNYYQliK90tLwtb8aeCuQK8zKGCRbBodVIrkcTqshULMnRuTOS6t1P7oQk3g6Q==}
