@@ -1,10 +1,10 @@
 {
   "private": true,
-  "repository": "https://github.com/NullVoxPopuli/ember-resources",
+  "repository": "https://github.com/NullVoxPopuli/ember-modify-based-class-resource",
   "license": "MIT",
   "author": "NullVoxPopuli",
   "scripts": {
-    "build": "pnpm run --filter ember-resources build",
+    "build": "pnpm run --filter ember-modify-based-class-resource build",
     "build:docs": "pnpm run --filter docs docs:collect",
     "ci:update": "npx ember-ci-update",
     "dev": "concurrently 'npm:dev:*' --prefix-colors cyan,white,yellow --restart-tries -1",
