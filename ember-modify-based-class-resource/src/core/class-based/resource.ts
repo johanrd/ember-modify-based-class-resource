@@ -5,7 +5,7 @@ import { assert } from '@ember/debug';
 // @ts-ignore
 import { invokeHelper } from '@ember/helper';
 
-import { registerUsable } from 'ember-resources';
+import { macroCondition, dependencySatisfies, importSync } from '@embroider/macros';
 
 import { DEFAULT_THUNK, normalizeThunk } from '../utils';
 
@@ -19,11 +19,15 @@ import type { Invoke } from '@glint/template/-private/integration';
 
 const TYPE = 'class-based';
 
-registerUsable(TYPE, (config) => {
-  let { definition, thunk } = config;
+if (macroCondition(dependencySatisfies('ember-resources', '>= 7.0.0')) {
+  const { registerUsable } = importSync('ember-resources');
 
-  return invokeHelper(this, definition, () => normalizeThunk(thunk));
-});
+  registerUsable(TYPE, (context, config) => {
+    let { definition, thunk } = config;
+
+    return invokeHelper(context, definition, () => normalizeThunk(thunk));
+  });
+}
 
 /**
  * @private utility type
