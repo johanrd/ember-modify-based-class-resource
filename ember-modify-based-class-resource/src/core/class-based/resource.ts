@@ -5,6 +5,8 @@ import { assert } from '@ember/debug';
 // @ts-ignore
 import { invokeHelper } from '@ember/helper';
 
+import { registerUsable } from 'ember-resources';
+
 import { DEFAULT_THUNK, normalizeThunk } from '../utils';
 
 import type { AsThunk, Cache, Constructor, Named, Positional, Thunk } from '[core-types]';
@@ -14,6 +16,14 @@ import type { HelperLike } from '@glint/template';
 // babel doesn't use decorator metadata
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import type { Invoke } from '@glint/template/-private/integration';
+
+const TYPE = 'class-based';
+
+registerUsable(TYPE, (config) => {
+  let { definition, thunk } = config;
+
+  return invokeHelper(this, definition, () => normalizeThunk(thunk));
+});
 
 /**
  * @private utility type
@@ -276,7 +286,7 @@ export class Resource<Args = unknown> {
       return {
         thunk: contextOrThunk,
         definition: this,
-        type: 'class-based',
+        type: TYPE,
         __INTERNAL__: true,
       } as unknown as SomeResource;
     }
@@ -342,7 +352,7 @@ function resourceOf<SomeResource extends Resource<unknown>>(
 ): SomeResource {
   assert(
     `Expected second argument, klass, to be a Resource. ` +
-      `Instead, received some ${typeof klass}, ${klass.name}`,
+    `Instead, received some ${typeof klass}, ${klass.name}`,
     klass.prototype instanceof Resource,
   );
 
