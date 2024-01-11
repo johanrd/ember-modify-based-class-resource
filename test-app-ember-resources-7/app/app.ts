@@ -9,7 +9,6 @@ if (macroCondition(isDevelopingApp())) {
   importSync('test-app/deprecation-workflow');
 }
 
-
 export default class App extends Application {
   modulePrefix = config.modulePrefix;
   podModulePrefix = config.podModulePrefix;
