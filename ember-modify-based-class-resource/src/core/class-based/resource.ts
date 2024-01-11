@@ -4,6 +4,7 @@ import { setOwner } from '@ember/application';
 import { assert } from '@ember/debug';
 // @ts-ignore
 import { invokeHelper } from '@ember/helper';
+import { dependencySatisfies, importSync, macroCondition } from '@embroider/macros';
 
 import { DEFAULT_THUNK, normalizeThunk } from '../utils';
 
@@ -14,6 +15,19 @@ import type { HelperLike } from '@glint/template';
 // babel doesn't use decorator metadata
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import type { Invoke } from '@glint/template/-private/integration';
+
+const TYPE = 'class-based';
+
+if (macroCondition(dependencySatisfies('ember-resources', '>= 7.0.0'))) {
+  // These types don't matter to consumers
+  const { registerUsable } = importSync('ember-resources') as any;
+
+  (registerUsable as any)(TYPE, (context: any, config: any) => {
+    let { definition, thunk } = config;
+
+    return invokeHelper(context, definition, () => normalizeThunk(thunk));
+  });
+}
 
 /**
  * @private utility type
@@ -276,7 +290,7 @@ export class Resource<Args = unknown> {
       return {
         thunk: contextOrThunk,
         definition: this,
-        type: 'class-based',
+        type: TYPE,
         __INTERNAL__: true,
       } as unknown as SomeResource;
     }

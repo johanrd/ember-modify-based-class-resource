@@ -1,4 +1,5 @@
 packages:
   - "ember-modify-based-class-resource"
   - "test-app"
+  - "test-app-ember-resources-7"
   - "dev/*"
