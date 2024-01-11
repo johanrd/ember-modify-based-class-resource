@@ -32,7 +32,7 @@
     "@glimmer/tracking": "^1.1.2",
     "ember-functions-as-helper-polyfill": "^2.0.1",
     "ember-modify-based-class-resource": "workspace:*",
-    "ember-resources": "^6.4.3",
+    "ember-resources": "^7.0.0",
     "tracked-built-ins": "^3.1.0"
   },
   "dependenciesMeta": {
