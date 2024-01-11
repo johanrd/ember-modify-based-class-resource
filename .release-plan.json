@@ -1,8 +1,17 @@
 {
   "solution": {
     "ember-modify-based-class-resource": {
-      "oldVersion": "1.0.0"
+      "impact": "minor",
+      "oldVersion": "1.0.0",
+      "newVersion": "1.1.0",
+      "constraints": [
+        {
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        }
+      ],
+      "pkgJSONPath": "./ember-modify-based-class-resource/package.json"
     }
   },
-  "description": "\n\n\n\n"
+  "description": "## Release (2024-01-11)\n\nember-modify-based-class-resource 1.1.0 (minor)\n\n#### :rocket: Enhancement\n* `test-app`\n  * [#8](https://github.com/NullVoxPopuli/ember-modify-based-class-resource/pull/8) Ensure no deprecations ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n* `ember-modify-based-class-resource`, `test-app`\n  * [#6](https://github.com/NullVoxPopuli/ember-modify-based-class-resource/pull/6) Hook in to the registerUsable API in ember-resources v7 ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### :memo: Documentation\n* [#7](https://github.com/NullVoxPopuli/ember-modify-based-class-resource/pull/7) Add docs from ember-resources ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
 }
