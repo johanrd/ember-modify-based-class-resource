@@ -110,7 +110,7 @@ generally simpler state-management than you'd otherwise see with with additional
 For example, this is how you'd handle initial setup, updates, and teardown with a `Resource`
 
 ```js
-import { Resource } from 'ember-resources';
+import { Resource } from 'ember-modify-based-class-resource';
 import { registerDestructor } from '@ember/destroyable';
 
 class MyResource extends Resource {
@@ -142,8 +142,7 @@ For example, consider a resource that doubles a number (this is over engineered,
 
 ```js
 import { tracked } from '@glimmer/tracking';
-// import { Resource } from 'ember-resources'; // in V5
-import { Resource } from 'ember-resources';
+import { Resource } from 'ember-modify-based-class-resource';
 
 class Doubler extends Resource {
   @tracked result = NaN;
@@ -180,8 +179,7 @@ Given the complete example of a `clock` above implemented in a function-based re
 A complete implementation, as a class-based resource could look similar to this:
 
 ```js
-// import { Resource } from 'ember-resources'; // in V5
-import { Resource } from 'ember-resources'
+import { Resource } from 'ember-modify-based-class-resource'
 import { tracked } from '@glimmer/tracking';
 import { registerDestructor } from '@ember/destroyable';
 
