@@ -1,4 +1,8 @@
 # Changelog
+
+
+
+
 ## Release (2024-01-11)
 
 ember-modify-based-class-resource 1.1.0 (minor)
